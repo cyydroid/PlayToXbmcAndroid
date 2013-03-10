@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.support.v4.app.FragmentActivity;
 import android.util.TypedValue;
 import android.view.*;
-import android.widget.*;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.ListView;
+import android.widget.TextView;
 import com.khloke.PlayToXbmcAndroid.fragments.NewClientFragment;
 import com.khloke.PlayToXbmcAndroid.objects.XbmcClient;
 
@@ -42,7 +45,7 @@ public class ChooseClientActivity extends FragmentActivity {
                 XbmcClient xbmcClient = xbmcClients.get(position);
                 if (Intent.ACTION_SEND.equals(action) && type != null) {
                     if ("text/plain".equals(type)) {
-                        playToXbmc(intent.getClipData().getItemAt(0).getText().toString(), xbmcClient);
+                        playToXbmc(intent.getStringExtra(Intent.EXTRA_TEXT), xbmcClient);
                     }
                 } else {
                     NewClientFragment newClientFragment = new NewClientFragment();
@@ -121,8 +124,6 @@ public class ChooseClientActivity extends FragmentActivity {
 
         post(aClient.getAddress(), aClient.getPort(), jsonAddRequest);
         post(aClient.getAddress(), aClient.getPort(), jsonPlayRequest);
-
-        Toast.makeText(this, aUrl, Toast.LENGTH_SHORT).show();
     }
 
     private HashMap<String, String> getUrlParams(String aUrl) {

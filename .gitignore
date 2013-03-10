@@ -1,5 +1,12 @@
+
+# IntelliJ Files
 *.iws
 *.ipr
 *.iml
+
+# Android Generated Resources
 out/*
 gen/*
+
+# Mac Crap
+.DS_Store

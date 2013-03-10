@@ -1,4 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name">PlayToXbmcAndroid</string>
+    <string name="app_name">Play to XBMC</string>
+
+    <string name="client_add">New XBMC Client</string>
+
+    <string name="new_client_title">New XBMC Client</string>
+    <string name="new_client_positive">Save</string>
+    <string name="new_client_negative">Cancel</string>
+    <string name="new_client_label_name">Name</string>
+    <string name="new_client_label_address">Address</string>
+    <string name="new_client_label_port">Port</string>
 </resources>
